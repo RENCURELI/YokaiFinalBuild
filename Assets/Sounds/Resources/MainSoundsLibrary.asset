@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e28dc9b552537841be0beb368940138, type: 3}
+  m_Name: MainSoundsLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::SoundsLibrary
+  sounds:
+  - name: PrisonBreak
+    clip: {fileID: 8300000, guid: 055d3f08456e5704796f41fa3d2a122b, type: 3}
+    volumeScale: 1
+  - name: SealAppear
+    clip: {fileID: 8300000, guid: 9e609548c7748f648bb47b2983b26ff5, type: 3}
+    volumeScale: 1
+  - name: CandleLight
+    clip: {fileID: 8300000, guid: dced0106d963dde4c9fa51f062e2d75b, type: 3}
+    volumeScale: 1
+  - name: MaskRaise
+    clip: {fileID: 8300000, guid: 0443f3810d67afa4eaebf0750e68fd27, type: 3}
+    volumeScale: 1
+  - name: OnCollectMask
+    clip: {fileID: 8300000, guid: 50dffb287b514b54eb5f1ae1d22db3c3, type: 3}
+    volumeScale: 0.5
+  - name: OnWearMaskChime
+    clip: {fileID: 8300000, guid: 1ae4abf100588cc4aabac1b99f5c42bf, type: 3}
+    volumeScale: 1
+  - name: OnRemoveMaskChime
+    clip: {fileID: 8300000, guid: 305324e2a5203e04b82c974493cdf2a3, type: 3}
+    volumeScale: 1
+  - name: GongHit
+    clip: {fileID: 8300000, guid: bfaece02209838341a61ae482406b0fb, type: 3}
+    volumeScale: 1
+  - name: BGM
+    clip: {fileID: 8300000, guid: baa13ced9509e9f47b62627be94f5b0e, type: 3}
+    volumeScale: 0.1
+  - name: BoatWaves
+    clip: {fileID: 8300000, guid: 28b852e12d5390040b139353c32c9511, type: 3}
+    volumeScale: 0.7
+  - name: WindOutLoop
+    clip: {fileID: 8300000, guid: 8de93f5652827da45bb581e20cac9e28, type: 3}
+    volumeScale: 0.5
+  - name: EncensLoop
+    clip: {fileID: 8300000, guid: c297c853cfdb07d4596928792d92782b, type: 3}
+    volumeScale: 1
+  - name: InsideOminous
+    clip: {fileID: 8300000, guid: cf30f10640eca274f803c3e114588972, type: 3}
+    volumeScale: 1
+  - name: InsideOminous2
+    clip: {fileID: 8300000, guid: 70f3e616dd912f2448041f2228c8bbb6, type: 3}
+    volumeScale: 1
+  - name: Monks
+    clip: {fileID: 8300000, guid: 3e90fcc9cdcd67f4a932eedda0343349, type: 3}
+    volumeScale: 1
+  - name: WaterLoop
+    clip: {fileID: 8300000, guid: 77284a0406c2a9c4d8e919c4ff46e3da, type: 3}
+    volumeScale: 0.6
+  - name: MonsterLoop
+    clip: {fileID: 8300000, guid: 6681028818cc24b47ab616cf5614801e, type: 3}
+    volumeScale: 1
+  - name: MagicSealLoop
+    clip: {fileID: 8300000, guid: 328ba5a6821769f4ca0d25d6f1d4cdb8, type: 3}
+    volumeScale: 1
+  - name: MainDoorClose
+    clip: {fileID: 8300000, guid: 11c58d5615870f14dbbee67ada039534, type: 3}
+    volumeScale: 0.7
+  - name: MainDoorOpen
+    clip: {fileID: 8300000, guid: 340afdc075ff484458a7283d90d22ec9, type: 3}
+    volumeScale: 1
+  - name: DemonAlert
+    clip: {fileID: 8300000, guid: bfd86fa9aac872a40816cf7b4c90759b, type: 3}
+    volumeScale: 1
+  - name: DemonBite
+    clip: {fileID: 8300000, guid: 52474331139cfbb46aa6f49d7ce85989, type: 3}
+    volumeScale: 1
+  - name: DemonSearch
+    clip: {fileID: 8300000, guid: 5c213880d33333a418a9e227b2d9a15d, type: 3}
+    volumeScale: 1
+  - name: NemesisIdle
+    clip: {fileID: 8300000, guid: 7080132edb6660e42a9399a82877275f, type: 3}
+    volumeScale: 1
+  - name: NemesisLaugh
+    clip: {fileID: 8300000, guid: 361766013b0f20841a25435e290bf62e, type: 3}
+    volumeScale: 1
+  - name: Hell
+    clip: {fileID: 8300000, guid: 3dde5c888f992594e979a6124e055887, type: 3}
+    volumeScale: 1
+  - name: Intro 1
+    clip: {fileID: 8300000, guid: 80a7ffac0d976c140ac4ccbd19e3cb80, type: 3}
+    volumeScale: 1
+  - name: Intro 2
+    clip: {fileID: 8300000, guid: 2a51e8d93c051ce49aaf0992824e6531, type: 3}
+    volumeScale: 1
+  - name: Intro 3
+    clip: {fileID: 8300000, guid: 86c765a37fde41e4fa6e8d0ae6be6519, type: 3}
+    volumeScale: 1
+  - name: Outro 1
+    clip: {fileID: 8300000, guid: f5bc4b0b2b802204eb30382b868b3d4a, type: 3}
+    volumeScale: 1
+  - name: Nemesis 1
+    clip: {fileID: 8300000, guid: b3b747c7d80e6324fb4c8887cac09dcd, type: 3}
+    volumeScale: 1
+  - name: Nemesis 2
+    clip: {fileID: 8300000, guid: 4ef737d7fa31eec4a8cd699c5405a8e1, type: 3}
+    volumeScale: 1
+  - name: Nemesis 3
+    clip: {fileID: 8300000, guid: 76a1a3e5bef4ce741b186a04acd87e15, type: 3}
+    volumeScale: 1
+  - name: Nemesis 4
+    clip: {fileID: 8300000, guid: e3e9b54421aa7314392cff24557e2b5d, type: 3}
+    volumeScale: 1
+  - name: Nemesis 5
+    clip: {fileID: 8300000, guid: 24a178d117694e540ba54935b7f6aa82, type: 3}
+    volumeScale: 1
+  - name: Nemesis 6
+    clip: {fileID: 8300000, guid: bc9df2357ebb2134a8e0fcfdff5c30fb, type: 3}
+    volumeScale: 1
+  - name: Hurry
+    clip: {fileID: 8300000, guid: 6697f31af42ef8b4f9234e10d63f527e, type: 3}
+    volumeScale: 1
