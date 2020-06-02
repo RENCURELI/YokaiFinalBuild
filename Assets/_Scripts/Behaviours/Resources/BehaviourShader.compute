@@ -1,0 +1,77 @@
+﻿#pragma kernel CSCandleUpdate
+#pragma kernel CSEnemyUpdate
+
+#define CANDLE_LIMIT 1024
+#define ENEMY_LIMIT 128
+
+#define CANDLE_MAX_DIST 50.0f
+#define ENEMY_MAX_DIST 40.0f
+
+float3 playerPosition;
+
+struct CandleInput {
+	float3 position;
+	float range;
+};
+struct CandleOutput {
+	int flag;
+};
+
+StructuredBuffer<CandleInput> candleInputs;
+RWStructuredBuffer<CandleOutput> candleOutputs;
+
+struct EnemyInput {
+	float3 position;
+};
+struct EnemyOutput {
+	int flag;
+};
+
+StructuredBuffer<EnemyInput> enemyInputs;
+RWStructuredBuffer<EnemyOutput> enemyOutputs;
+
+int candleCount = 0;
+int enemyCount = 0;
+
+[numthreads(1,1,1)]
+void CSCandleUpdate (uint3 id : SV_DispatchThreadID)
+{
+	int candleId = id.x;
+
+	if (candleId >= candleCount) return;
+
+	float3 candlePos = candleInputs[candleId].position;
+	float candleRange = candleInputs[candleId].range;
+
+	if (distance(candlePos, playerPosition) > CANDLE_MAX_DIST) {
+		candleOutputs[candleId].flag = 0;
+		return;
+	}
+
+	for (int i = 0; i < enemyCount; i++)
+	{
+		float3 enemyPos = enemyInputs[i].position;
+		float distToEnemy = distance(candlePos, enemyPos);
+		if (distToEnemy <= candleRange) {
+			candleOutputs[candleId].flag = 1;
+			return;
+		}
+	}
+
+	candleOutputs[candleId].flag = 0;
+}
+
+[numthreads(1, 1, 1)]
+void CSEnemyUpdate(uint3 id : SV_DispatchThreadID)
+{
+	int enemyId = id.x;
+
+	if (enemyId >= enemyCount) return;
+
+	if (distance(enemyInputs[enemyId].position, playerPosition) > ENEMY_MAX_DIST) {
+		enemyOutputs[enemyId].flag = 0;
+	}
+	else {
+		enemyOutputs[enemyId].flag = 1;
+	}
+}

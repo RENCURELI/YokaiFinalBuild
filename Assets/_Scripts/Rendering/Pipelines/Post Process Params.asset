@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5600620ce4ec2640ae7de1e794a864c, type: 3}
+  m_Name: Post Process Params
+  m_EditorClassIdentifier: 
+  passes:
+  - {fileID: 11400000, guid: b82778be302648841954dfe4ba578b76, type: 2}
+  - {fileID: 11400000, guid: 93f3e655447ea7742b6201af99335288, type: 2}
+  - {fileID: 11400000, guid: 18fa9713517e4104c8f1a641ca8abe54, type: 2}
+  - {fileID: 11400000, guid: 7fb63eee71c30fa4c8e7093bfeda8a0f, type: 2}
+  - {fileID: 11400000, guid: 3657bbef681377a4faf1afb43f234e90, type: 2}

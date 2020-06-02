@@ -1,0 +1,53 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSRadialBlur
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+Texture2D<float4> _Source;
+RWTexture2D<float4> _Destination;
+
+float _ScreenWidth;
+float _ScreenHeight;
+
+float2 UVFromIndices(int2 indices)
+{
+    float x = indices.x / _ScreenWidth;
+    float y = indices.y / _ScreenHeight;
+    return float2(x, y);
+}
+
+int2 IndicesFromUV(float2 uv)
+{
+    int x = clamp(round(saturate(uv.x) * _ScreenWidth), 0, _ScreenWidth);
+    int y = clamp(round(saturate(uv.y) * _ScreenHeight), 0, _ScreenHeight);
+    return int2(x, y);
+}
+
+float _BlurQuality; // Strips
+float _BlurLayers; // Distance
+float _BlurStrength; // Distance
+half _BlurBlend;
+
+[numthreads(1,1,1)] 
+void CSRadialBlur (uint3 id : SV_DispatchThreadID)
+{
+    float4 pixel = _Source[id.xy];
+    float2 uv = UVFromIndices(id.xy);
+    float angle = 2 * 3.14 / _BlurQuality;
+    float strength = 1.0 / (_BlurQuality + _BlurLayers + 1);
+    float layer = 1.0 / _BlurLayers;
+    float4 blurredPixel = pixel * strength;
+    for (int i = 0; i < _BlurQuality; i++)
+    {
+        for (int l = 0; l < _BlurLayers; l++)
+        {
+            float2 dir = normalize(float2(cos(angle * i), sin(angle * i)));
+            float2 blurUV = uv + dir * _BlurStrength * 0.001 * layer * l;
+            int2 blurIndices = IndicesFromUV(blurUV);
+            float4 otherPixel = _Source[blurIndices];
+            float lumin = (otherPixel.r + otherPixel.g + otherPixel.b) * (1.0 / 3.0);
+            blurredPixel += lerp(0, otherPixel * strength * 2, lumin);
+        }
+    }
+    _Destination[id.xy] = pixel + blurredPixel * _BlurBlend;
+}

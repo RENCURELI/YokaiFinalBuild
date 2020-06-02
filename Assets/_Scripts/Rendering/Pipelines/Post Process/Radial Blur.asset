@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35719d2dd3923a648b4cba769e758e79, type: 3}
+  m_Name: Radial Blur
+  m_EditorClassIdentifier: 
+  blend: 0.39
+  material: {fileID: 2100000, guid: abfb6ce4f7b244149996ee4862b6df31, type: 2}
+  shader: {fileID: 7200000, guid: b749f69f00d330349906097a4b8c88bc, type: 3}
+  blurQuality: 12
+  blurStrength: 16
+  blurLayer: 4
+  blurBlend: 1
